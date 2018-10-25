@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle color="dark">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title *ngFor="let item of babyprofile">
+      Child Profile
+    </ion-title>
+       
+
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3">
+
+    <ion-card *ngFor="let item of babyprofile" >
+      <ion-card-content>
+          
+        <img src="assets/img/babyhead.png" style="display:block;width:20%;height:auto;margin-left:auto;margin-right:auto;" />
+          
+  <ion-list >
+    <ion-item >
+     <p>First Name</p> {{item.firstName}}
+    </ion-item>
+    <ion-item >
+      <p>Last Name</p> {{item.lastName}}
+    </ion-item>
+    <ion-item>
+      <p>Gender</p> {{item.gender}}
+    </ion-item>
+    <ion-item>
+      <p>Date of Birth</p>{{item.DOB}}
+    </ion-item>
+    <ion-item> 
+      <p>Distinguishing Marks</p> {{item.distinguishingMarks}}
+    </ion-item>
+  </ion-list>
+  </ion-card-content>
+</ion-card>
+
+  
+
+</ion-content>

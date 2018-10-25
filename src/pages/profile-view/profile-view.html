@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle color="dark">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    
+    <ion-title>Profile</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3">
+
+   <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  
+
+ 
+
+  <ion-card  >       
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/img/user.png">
+        </ion-avatar>
+        <h1>{{userDetails.userName}}</h1>
+      </ion-item>     
+    </ion-card>
+
+  <ion-card >
+  <ion-card-content>
+    <ion-item color="none" id="profileView-list-item10">
+      First Name<p style="font-size: 20px">{{staffDetails.firstName}}</p>
+    </ion-item>
+    <ion-item color="none" id="profileView-list-item11">
+      Last Name<p style="font-size: 20px">{{staffDetails.LastName}}</p>
+    </ion-item>
+    <ion-item color="none" id="profileView-list-item12">
+      Gender<p style="font-size: 20px">{{staffDetails.gender}}</p>
+    </ion-item>
+    <ion-item color="none" id="profileView-list-item13">
+      Date of Birth<p style="font-size: 20px">{{staffDetails.dateOfBirth}}</p>
+    </ion-item>
+    <ion-item color="none" id="profileView-list-item14">
+      Address<p style="font-size: 20px">{{staffDetails.Address}}</p>
+    </ion-item>
+    <ion-item color="none" id="profileView-list-item15">
+      Email Address<p style="font-size: 20px">{{staffDetails.emailAddress}}</p>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+
+  <button ion-button full color="danger" on-click="logout()"  >
+    Logout 
+    <ion-icon name="log-out-outline"></ion-icon>
+  </button>
+
+</ion-content>

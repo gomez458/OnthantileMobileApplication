@@ -1,0 +1,193 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        Baby Tracker
+      </ion-title>
+      
+      <ion-buttons end>
+        <button ion-button icon-left on-click="goToProfileView()" color="balanced">
+          <ion-icon name="person"></ion-icon>
+          <p style="color:dodgerblue">{{userDetails.userName}}</p>
+        </button>
+      </ion-buttons>
+  
+    </ion-navbar>
+  </ion-header>
+  
+  
+  
+  <ion-content padding id="page4">
+    <div id="babyTracker-container12">
+      <div>
+        <img src="assets/img/onthantilelogo.png" style="display:block;width:50%;height:25%;margin-left:auto;margin-right:auto;" />
+      </div>
+    </div>
+    <div id="babyTracker-container14">
+      <div class="spacer" style="width:748.031px;height:23.9844px;" id="babyTracker-spacer20"></div>
+    </div>
+    <div id="babyTracker-container15">
+      <button id="babyTracker-button9" ion-button outline color="dark" block icon-right end on-click="gotoActView()">
+        Activities
+        <ion-icon name="basketball"></ion-icon>
+      </button>
+      <div id="babyTracker-container37">
+        <div class="spacer" style="width:748.008px;height:19.9688px;" id="babyTracker-spacer19"></div>
+      </div>
+    </div>
+    <div id="babyTracker-container16">
+      <div id="babyTracker-container32">
+        <button id="babyTracker-button10" ion-button outline color="dark" block icon-right on-click="gotoMealView()">
+          Meals
+          <ion-icon name="restaurant"></ion-icon>
+        </button>
+        <div id="babyTracker-container33">
+          <div class="spacer" style="width:748.008px;height:21.9688px;" id="babyTracker-spacer16"></div>
+        </div>
+      </div>
+    </div>
+    <div id="babyTracker-container17">
+      <button id="babyTracker-button11" ion-button outline color="dark" block icon-right on-click="gotoTempView()">
+        Biometerics
+        <ion-icon name="stats"></ion-icon>
+      </button>
+    </div>
+    <div id="babyTracker-container18">
+      <div class="spacer" style="width:748.008px;height:15.9844px;" id="babyTracker-spacer18"></div>
+    </div>
+    <div id="babyTracker-container34">
+      <button id="babyTracker-button12" ion-button outline color="dark" block icon-right on-click="gotoMedView()">
+        Medication
+        <ion-icon name="medical"></ion-icon>
+      </button>
+      <div id="babyTracker-container35">
+        <div class="spacer" style="width:748.031px;height:15.9844px;" id="babyTracker-spacer17"></div>
+      </div>
+    </div>
+    <div id="babyTracker-container36">
+      <button id="babyTracker-button24" ion-button outline color="dark" block icon-right on-click="gotoSleepView()">
+        Sleep Time
+        <ion-icon name="alarm"></ion-icon>
+      </button>
+      <div id="babyTracker-container41">
+        <div class="spacer" style="width:748.031px;height:21.9844px;" id="babyTracker-spacer23"></div>
+      </div>
+      <button id="babyTracker-button22" ion-button outline color="dark" block icon-right on-click="gotoNappyView()">
+        Nappy Change
+        <ion-icon name="body"></ion-icon>
+      </button>
+    </div>
+    <div id="babyTracker-container38">
+      <div id="babyTracker-container40">
+        <div class="spacer" style="width:748.008px;height:21.9844px;" id="babyTracker-spacer21"></div>
+      </div>
+    </div>
+    <div id="babyTracker-container39">
+      <button id="babyTracker-button23" ion-button outline color="dark" block icon-right on-click="gotoAnomalyView()">
+        Anomalies
+        <ion-icon name="alert"></ion-icon>
+      </button>
+    </div>
+  </ion-content>
+  
+  
+  <!--<ion-header>
+  
+    <ion-navbar>
+  
+    <button ion-button menuToggle color="dark">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  
+      <ion-title><img src="assets/img/onthantilelogo.png" style="display:block;width:40%;height:auto;margin-left:auto;margin-right:auto;" /></ion-title>
+      
+      <ion-buttons end>
+        <button ion-button icon-left on-click="goToProfileView()" >
+          <ion-icon name="person"></ion-icon>
+          <p style="color:dodgerblue">{{userDetails.userName}}</p>
+        </button>
+  
+      </ion-buttons>
+  
+    </ion-navbar>
+  
+    
+  
+  </ion-header>
+  
+  
+  
+  <ion-content padding class="icons">
+   
+  
+   <!-- ICON ROW1!  
+  <ion-row>
+      <ion-col><img src="assets/img/activity.png" style="display:block;width:70%;height:auto;margin-left:auto;margin-right:auto;" on-click="gotoActView()" ><h4>Activities</h4></ion-col>
+      <ion-col><img src="assets/img/nappy.png" style="display:block;width:70%;height:auto;margin-left:auto;margin-right:auto;" on-click="gotoNappyView()"><h4>Nappy</h4></ion-col>
+      <ion-col><img src="assets/img/meals.png" style="display:block;width:70%;height:auto;margin-left:auto;margin-right:auto;" on-click="gotoMealView()"><h4>Meals</h4></ion-col>
+  </ion-row>
+  
+  
+   <div class="spacer" style="width:300px;height:50px;" id="login-spacer1"></div>
+  
+    ICON ROW2! 
+  <ion-row>
+      <ion-col align-self: center><img src="assets/img/sleeptime.png" style="display:block;width:90%;height:auto;margin-left:auto;margin-right:auto;"  on-click="gotoSleepView()"><h4>Sleep</h4></ion-col>
+      <ion-col><img src="assets/img/thermometer.png"style="display:block;width:90%;height:auto;margin-left:auto;margin-right:auto;" on-click="gotoTempView()"><h4>Biometrics</h4></ion-col>
+      <ion-col><img src="assets/img/medicalhistory.png" style="display:block;width:90%;height:auto;margin-left:auto;margin-right:auto;"on-click="gotoMedView()" ><h4>Medical</h4></ion-col>
+  </ion-row>
+  
+  
+   <div class="spacer" style="width:300px;height:50px;" id="login-spacer1"></div> -->
+  
+   <!-- Here -->
+  
+   <!-- <ion-card>
+    <ion-card-header color="positive">
+      <h2 style="text-align: center; font-size: 22px;">Recording Options</h2>
+    </ion-card-header>
+  
+    <ion-list>
+      <button ion-item on-click="gotoTempView()">
+        <ion-icon name="pulse" item-start></ion-icon>
+        Biometrics
+      </button>
+  
+      <button ion-item on-click="gotoActView()">
+        <ion-icon name="basketball" item-start></ion-icon>
+        Activities
+      </button>
+  
+      <button ion-item on-click="gotoNappyView()">
+        <ion-icon name="alert" item-start></ion-icon>
+        Nappy Change
+      </button>
+  
+      <button ion-item on-click="gotoMealView()">
+        <ion-icon name="restaurant" item-start></ion-icon>
+        Meals
+      </button>
+  
+      <button ion-item  on-click="gotoSleepView()">
+        <ion-icon name="moon" item-start></ion-icon>
+        Sleep Time
+      </button>
+  
+      <button ion-item on-click="gotoMedView()">
+        <ion-icon name="medkit" item-start></ion-icon>
+        Medication
+      </button>
+  
+      <button ion-item on-click="gotoAnomalyView()">
+        <ion-icon name="alert" item-start></ion-icon>
+        Anomalies
+      </button>
+  
+  
+    </ion-list>
+  </ion-card>
+  
+  </ion-content>-->
+  

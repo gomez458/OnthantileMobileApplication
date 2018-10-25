@@ -1,0 +1,252 @@
+
+<ion-header>
+    
+      <ion-navbar>
+    
+      <button ion-button menuToggle color="dark">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    
+     
+    <ion-title>
+      Biometrics
+    </ion-title>
+    
+    
+         <ion-buttons end>
+          <button ion-button icon-left on-click="goToProfileView()" color="dark">
+            <ion-icon name="person"></ion-icon>
+            {{userDetails.userName}}
+          </button>
+    
+        </ion-buttons>
+    
+      </ion-navbar>
+      <ion-toolbar no-border-top >
+        
+            <ion-segment [(ngModel)]="item" color="dark">
+        
+              <ion-segment-button value="Temperature">
+                Temperature
+              </ion-segment-button>
+        
+              <ion-segment-button value="Weight">
+                Weight
+              </ion-segment-button>
+        
+              <ion-segment-button value="Height">
+                Height
+              </ion-segment-button>
+        
+            </ion-segment>
+        
+          </ion-toolbar>
+    </ion-header>
+    
+    
+    <ion-content padding class="record">
+        
+    
+      <div [ngSwitch]="item" >
+    
+     <ion-list *ngSwitchCase="'Temperature'">
+    
+      <div id="babyTemp-container43">
+        
+      </div>
+    
+    <h3>Record Temperature</h3>
+    
+    <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+    <!--
+    <button ion-button small color="light" on-click="trackchild(1)">Select Child</button>
+    <button ion-button full outline color="danger">{{childbadge.firstName}}</button> -->
+    
+    <ion-item>
+      <ion-label>{{childbadge.firstName}} {{childbadge.lastName}}</ion-label>        
+      <button ion-button outline item-end on-click="trackchild(1)">Select</button>
+      <button ion-button outline item-end on-click="viewchild()">View</button>
+    </ion-item>
+    
+    <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+    
+    
+           <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+        <ion-list-header>
+          Temperature (°C)
+        </ion-list-header>
+        <ion-item>
+          <ion-input type="number" placeholder="37°C" [(ngModel)]="ChildTemperature.babyTemperature"></ion-input>
+        </ion-item>
+      </ion-list>
+      <p></p>
+    
+      <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+        <ion-list-header>
+          Date
+        </ion-list-header>
+        <ion-item>
+            <!-- <ion-input type="date" placeholder="Date" [(ngModel)]="ChildTemperature.Temperaturetime"></ion-input> -->
+            <ion-datetime displayFormat="MM/DD/YYYY" placeholder="Date" [(ngModel)]="ChildTemperature.date"></ion-datetime>
+          </ion-item>
+          </ion-list>
+          <p></p>
+    
+          <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+            <ion-list-header>
+              Time
+            </ion-list-header>
+            <ion-item>
+            <ion-datetime displayFormat="hh:mm:ss" placeholder="Time"  [(ngModel)]="ChildTemperature.time"></ion-datetime>
+    
+          </ion-item>
+        </ion-list>
+     
+           <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+    
+    
+       
+    
+        <div id="babyActivity-container58">
+        <button id="babyActivity-button31" ion-button color="dark" on-click="Temperature()" block icon-right>
+          Record Temperature
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </button>
+        </div>
+    
+    
+    
+    
+         </ion-list>
+    
+    
+    
+      
+     <ion-list *ngSwitchCase="'Weight'">
+    
+      <div id="babyWeight-container43">
+        
+      </div>
+      
+    
+          <h3>Record Weight</h3>
+    
+          <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+          <!--
+          <button ion-button small color="light" on-click="trackchild(2)">Select Child</button>
+          <button ion-button full outline color="dark">{{childbadge.firstName}}</button> -->
+            
+          <ion-item>
+            
+            <ion-label>{{childbadge.firstName}} {{childbadge.lastName}}</ion-label>        
+            <button ion-button outline item-end on-click="trackchild(2)">Select</button>
+            <button ion-button outline item-end on-click="viewchild()">View</button>
+          </ion-item>
+          
+          <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+    
+          <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+              <ion-list-header>
+                Weight(kg)
+              </ion-list-header>
+              <ion-item>
+                <ion-input type="number" placeholder="40 kg" [(ngModel)]="ChildWeight.weight"></ion-input>
+              </ion-item>
+          </ion-list>
+          <p></p>
+    
+      <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+          <ion-list-header>
+            Date
+          </ion-list-header>
+          <ion-item>
+             <!-- <ion-input type="date" placeholder="Date" [(ngModel)]="ChildWeight.date"></ion-input> -->
+            <ion-datetime displayFormat="MM/DD/YYYY" placeholder="Date" [(ngModel)]="ChildWeight.date"></ion-datetime>
+            </ion-item>
+            </ion-list>
+    
+           <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+    
+    
+       <div id="babyWeight-container58">
+        <button id="baby-button31" ion-button color="dark" on-click="Weight()" block icon-right>
+          Record Weight
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </button>
+       </div>
+    
+    
+    
+    
+    
+    </ion-list>
+    
+    
+    
+    
+    
+    
+    
+    <ion-list *ngSwitchCase="'Height'">
+    
+      <div id="babyHeight-container43">
+       
+      </div>
+    
+        <h3>Record Height</h3>
+    
+        <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+        <!--
+        <button ion-button small color="light" on-click="trackchild(3)">Select Child</button>
+        <button ion-button full outline color="secondary">{{childbadge.firstName}}</button> -->
+    
+        <ion-item>
+         
+          <ion-label>{{childbadge.firstName}} {{childbadge.lastName}}</ion-label>        
+          <button ion-button outline item-end on-click="trackchild(3)">Select</button>
+          <button ion-button outline item-end on-click="viewchild()">View</button>
+        </ion-item>
+        
+        <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+        
+        <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+            <ion-list-header>
+              Height (cm)
+            </ion-list-header>
+            <ion-item>
+              <ion-input type="number" placeholder="90 cm" [(ngModel)]="ChildHeight.babyheight"></ion-input>
+            </ion-item>
+        </ion-list>
+        <p></p>
+    
+          <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+            <ion-list-header>
+              Date
+            </ion-list-header>
+            <ion-item>
+            <!-- <ion-input type="date" placeholder="Date" [(ngModel)]="ChildHeight.date"></ion-input> -->
+            <ion-datetime displayFormat="MM/DD/YYYY" placeholder="Date" [(ngModel)]="ChildHeight.date"></ion-datetime>
+            </ion-item>
+          </ion-list>
+     
+           <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+    
+    
+       
+    
+    
+        <div id="babyHeight-container58">
+        <button id="babyHeight-button31" ion-button color="dark" on-click="Height()" block icon-right>
+          Record Height
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </button>
+        </div>
+    
+    
+    
+      </ion-list>
+    
+    </div>
+    
+    </ion-content>
+    

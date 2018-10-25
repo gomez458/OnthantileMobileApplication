@@ -1,0 +1,89 @@
+
+<ion-header>
+    
+      <ion-navbar>
+    
+      <button ion-button menuToggle color="dark">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+         
+        <ion-title>Baby Sleeping Time</ion-title>
+
+        <ion-buttons end>
+          <button ion-button icon-left on-click="goToProfileView()" color="dark">
+            <ion-icon name="person"></ion-icon>
+            {{userDetails.userName}}
+          </button>
+    
+        </ion-buttons>
+    
+      </ion-navbar>
+    </ion-header>
+    
+    
+    <ion-content padding>
+
+<div id="babyActivity-container43">
+    
+  </div>
+  <div id="babyActivity-container44">
+    <div class="spacer" style="width:748.031px;height:23.9844px;" id="babyActivity-spacer24"></div>
+  </div>
+        
+      <!--  <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>-->
+        
+           <!-- button ion-button small color="light" on-click="trackchild()">Select Child</button>
+        <button ion-button full outline color="danger">{{childbadge.firstName}}</button-->
+    
+          <ion-item>
+            
+            <ion-label>{{childbadge.firstName}} {{childbadge.lastName}}</ion-label>        
+            <button ion-button outline item-end on-click="trackchild()">Select</button>
+            <button ion-button outline item-end on-click="viewchild()">View</button>
+          </ion-item>
+  
+        <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+        
+        <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+            <ion-list-header>
+              Date
+            </ion-list-header>
+            <ion-item>
+                        <!-- <ion-input type="date" placeholder="Date" [(ngModel)]="ChildSleep.Date"></ion-input> -->
+        <ion-datetime displayFormat="MM/DD/YYYY" placeholder="Date" [(ngModel)]="ChildSleep.Date"></ion-datetime>
+        
+              </ion-item>
+              </ion-list>
+
+              <p></p>
+
+        <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+            <ion-list-header>
+              Sleep Time
+            </ion-list-header>
+            <ion-item>
+            <ion-datetime displayFormat="hh:mm:ss" placeholder="Time" [(ngModel)]="ChildSleep.sleeptime"></ion-datetime>
+            
+          </ion-item>
+        </ion-list>
+        <p></p>
+
+
+        <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+            <ion-list-header>
+              Wake Time
+            </ion-list-header>
+            <ion-item>
+            <ion-datetime displayFormat="hh:mm:ss" placeholder="Time" [(ngModel)]="ChildSleep.waketime"></ion-datetime>
+          </ion-item>
+        </ion-list>
+
+         <div id="babyActivity-container58">
+          <button id="babyActivity-button31" ion-button color="dark" on-click="Sleep()" block icon-right>
+            Record Sleeping Time
+          <ion-icon name="checkmark-circle"></ion-icon>
+          </button>
+        </div>
+    
+    </ion-content>
+    

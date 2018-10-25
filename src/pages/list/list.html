@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle color="dark">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    
+
+    <ion-buttons end>
+
+        <button ion-button icon-left on-click="goToProfileView()" color="dark">
+            <ion-icon name="person"></ion-icon>
+            <p style="color:dodgerblue">{{userDetails.userName}}</p>
+          </button>
+
+    </ion-buttons>
+  </ion-navbar>
+
+        
+
+</ion-header>
+
+<ion-content padding>
+
+   
+
+  <ion-searchbar colour="dark" (ionInput)="getChildren($event)" [showCancelButton]="shouldShowCancel" (ionCancel)="onCancel($event)"></ion-searchbar>
+
+<ion-refresher (ionRefresh)="doRefresh($event)" (ionCancel)="onCancel">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+<ion-list> <!-- [(ngModel)]="childData.idBabyProfile"-->
+  <ion-item *ngFor="let item of modifiedbabydata" on-click="goToBabyProfileView(item)" ng-bind="item">
+    <ion-avatar item-start>
+      <img src="assets/img/child.png" >
+    </ion-avatar>
+    <div>
+    <p></p>
+    <h4 [innerHTML]="item.firstName" ></h4>
+    <h4 [innerHTML]="item.lastName" ></h4>
+    <h3 [innerHTML]="item.DOB"></h3>
+    </div>
+  </ion-item>
+</ion-list>
+
+  <ion-list>
+   
+  
+
+  </ion-list>
+
+  
+
+</ion-content>
+
+ <!-- <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon [name]="item.icon" item-left></ion-icon>
+      {{item.title}}
+      <div class="item-note" item-right>
+        {{item.note}}
+      </div>
+    </button> -->
+
+    <!--
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div> 
+
+
+
+
+
+
+-->

@@ -1,0 +1,65 @@
+
+<ion-header>
+    
+      <ion-navbar>
+    
+      <button ion-button menuToggle color="dark">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    
+        <ion-title>Baby Medication</ion-title>
+        
+        <ion-buttons end>
+          <button ion-button icon-left on-click="goToProfileView()" color="dark">
+            <ion-icon name="person"></ion-icon>
+            {{userDetails.userName}}
+          </button>
+        </ion-buttons>
+      </ion-navbar> 
+</ion-header>
+    
+    <ion-content padding>
+
+  
+  <div id="babyMed-container43">
+    
+  </div>
+  <div id="babyMed-container44">
+    <div class="spacer" style="width:748.031px;height:23.9844px;" id="babyActivity-spacer24"></div>
+  </div>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+            <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+      <!-- Card for each medication to take -->
+      <!-- Example -->
+      <ion-card>
+        <ion-card-content>
+          <ion-card-title style="font-size:20px; text-align:center">
+            Daily Medication
+            </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card *ngFor="let item of childprescriptions" >
+        <ion-card-content>
+          <ion-card-title>
+           {{item.firstName}} {{item.lastName}}
+            </ion-card-title>
+            <p [innerHTML]="item.medicine"></p>
+            <p>{{item.quantity}} {{item.metric}}</p>                        
+            <p [innerHTML]="item.timeInterval"></p>
+            <p [innerHTML]="item.comments"></p>
+            <button ion-item on-click="promptmed(item)" ng-bind="item" > 
+              <ion-icon name="done-all" item-start ></ion-icon>
+              Mark Complete
+            </button>
+        </ion-card-content>
+      </ion-card>
+   
+        
+    
+    </ion-content>
+    

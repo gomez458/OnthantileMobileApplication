@@ -1,0 +1,158 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle color="dark">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      
+      <ion-title>
+        Daily Log
+      </ion-title>
+      
+      <ion-buttons end>
+  
+        <button ion-button icon-left color="dark" on-click="goToProfileView()" >
+          <ion-icon name="person"></ion-icon>
+          <p>{{userDetails.userName}}</p>        
+        </button>
+  
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content>
+  
+    <div id="babyLog-container43">
+    
+    </div>
+    <div id="baby-container44">
+      <div class="spacer" style="width:748.031px;height:23.9844px;" id="babyActivity-spacer24"></div>
+    </div>
+  
+  
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+  
+    <ion-card *ngFor="let item of RecordActivity">
+        <ion-card-header color="positive">
+        </ion-card-header>
+        <ion-item >
+          <ion-icon name="basketball" item-start large></ion-icon>
+          <h2>Activity for {{item.firstname}} {{item.lastname}}</h2>
+          <p>{{item.time}}</p>
+          <p>{{item.activity }}</p>
+          <p>{{item.activityStatus}}</p>       
+        </ion-item>
+      
+      
+      </ion-card>
+  
+      <ion-card *ngFor="let anomaly of RecordAnomaly">
+        <ion-card-header color="positive">
+        </ion-card-header>
+        <ion-item >
+          <ion-icon name="alert" item-start large></ion-icon>
+          <h2 >Anomaly for {{anomaly.firstname}} {{anomaly.lastname}}</h2>
+          <p>{{anomaly.time}}</p> 
+          <p>{{anomaly.description}}</p>     
+        </ion-item>
+      
+      
+      </ion-card>
+  
+   
+    
+        <ion-card *ngFor="let height of RecordHeight">
+          <ion-card-header color="positive">
+            
+          </ion-card-header>
+          <ion-item >
+            <ion-icon name="ios-man" item-start large></ion-icon>
+            <h2>Height For {{height.firstname}} {{height.lastname}}</h2>
+            <p>{{height.babyheight}}cm</p>     
+          </ion-item>
+        
+        
+        </ion-card>
+  
+        <ion-card *ngFor="let meal of RecordMeal">
+          <ion-card-header color="positive">
+          </ion-card-header>
+          <ion-item >
+            <ion-icon name="restaurant" item-start large></ion-icon>
+            <h2>Meal for {{meal.firstname}} {{meal.lastname}}</h2>
+            <p>{{meal.time}}</p> 
+            <p>{{meal.typeOfMeal}}</p>     
+            
+          </ion-item>
+        </ion-card>
+  
+        <ion-card *ngFor="let nappy of RecordNappy">
+          <ion-card-header color="positive">
+          </ion-card-header>
+          <ion-item >
+            <ion-icon name="body" item-start large></ion-icon>
+            <h2 >Nappy Change for {{nappy.firstname}} {{nappy.lastname}}</h2>
+            <p>{{ nappy.nappyChangeTime }}</p>     
+          </ion-item>
+        
+        
+        </ion-card>
+    
+        <ion-card *ngFor="let sleep of RecordSleepTime">
+          <ion-card-header color="positive">
+            
+          </ion-card-header>
+          <ion-item >
+            <ion-icon name="alarm" item-start large></ion-icon>
+            <h2>Sleep Time for {{sleep.firstname}} {{sleep.lastname}}</h2>
+            <p>slept @{{sleep.sleeptime}}</p>     
+            <p>woke @{{sleep.waketime}}</p>               
+          </ion-item>
+        
+        
+        </ion-card>
+  
+        <ion-card *ngFor="let temp of RecordTemperature">
+          <ion-card-header color="positive">
+          </ion-card-header>
+          <ion-item >
+            <ion-icon name="ios-thermometer" item-start large></ion-icon>
+            <h2 >Temperature for {{temp.firstname}} {{temp.lastname}}</h2>
+            <p>{{temp.time}}</p>     
+            <p>{{temp.babyTemperature}}°C</p>               
+          </ion-item>
+        
+        
+        </ion-card>
+  
+        <ion-card *ngFor="let weight of RecordWeight">
+          <ion-card-header color="positive">
+          </ion-card-header>
+          <ion-item >
+              <ion-icon name="ios-cube-outline" item-start large></ion-icon>
+            <h2>Weight for {{weight.firstname}} {{weight.lastname}}</h2>
+            <p>{{weight.weight}}Kg</p>               
+          </ion-item>
+        
+        
+        </ion-card>
+  
+        <ion-card *ngFor="let med of RecordMedication">
+          <ion-card-header color="positive">
+          </ion-card-header>
+          <ion-item >
+            <ion-icon name="medical" item-start large></ion-icon>
+            <h2>Medication for {{med.firstname}} {{med.lastname}}</h2>            
+            <p>{{med.admissionTime | date:'shortTime'}}</p>     
+            <p>{{med.medicineTaken}}</p>               
+            <p>{{med.quantity}} {{med.metric}}</p>
+          </ion-item>
+        
+        </ion-card>
+  
+  
+  </ion-content>
+  
+  

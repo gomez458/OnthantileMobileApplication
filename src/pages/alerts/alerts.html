@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle color="dark">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><img src="assets/img/onthantilelogo.png" style="display:block;width:40%;height:auto;margin-left:auto;margin-right:auto;" /></ion-title>
+    
+    <ion-buttons end>
+
+      <button ion-button icon-left on-click="goToProfileView()" color="dark">
+        <ion-icon name="person"></ion-icon>
+        <p style="color:dodgerblue">{{userDetails.userName}}</p>
+      </button>
+
+    </ion-buttons>
+  </ion-navbar>
+
+        
+
+</ion-header>
+
+<ion-content>
+
+
+<ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
+
+
+ 
+
+  <ion-card *ngFor="let item of alertdata" >
+      
+        <ion-item>
+            <ion-icon name="ios-notifications-outline" item-right large style="color:darkcyan"></ion-icon>
+          <ion-avatar item-start>
+            <img src="assets/img/user.png">
+          </ion-avatar>
+          <h2 style="color:darkcyan">{{item.firstName}} {{item.LastName}}</h2>
+          <p style="color:black">{{item.dateAndTime | date:'longDate' }}</p>
+        </ion-item>
+            
+        <ion-card-content>
+            <p [innerHTML]="item.body"></p>  
+            
+        </ion-card-content>      
+      </ion-card>
+
+  
+
+</ion-content>
+

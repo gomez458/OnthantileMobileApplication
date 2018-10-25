@@ -1,0 +1,126 @@
+<ion-header>
+    <ion-navbar>
+    <button ion-button menuToggle color="dark">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  
+  
+  
+      <ion-title>
+Scheduler          
+      </ion-title>
+  
+     
+      <ion-buttons end>
+        <button ion-button icon-left on-click="goToProfileView()" color="dark">
+          <ion-icon name="person"></ion-icon>
+          <p>{{userDetails.userName}}</p>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+    <ion-toolbar>
+        <ion-segment [(ngModel)]="item" color="dark">
+            <ion-segment-button value="tasks">
+              Tasks
+            </ion-segment-button>
+        
+            <ion-segment-button value="schedule">
+              Schedule
+            </ion-segment-button>
+        
+          </ion-segment>
+        </ion-toolbar>
+  </ion-header>
+ 
+  
+ 
+    <ion-content padding>
+        
+
+       
+
+      <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+  
+  
+  <div [ngSwitch]="item">
+  
+    <div id="babySchd-container43">
+      <div>
+      </div>
+    </div>
+  
+  
+  <ion-list *ngSwitchCase="'tasks'">
+      
+  
+  
+    <ion-list>
+        <ion-list-header>
+            Outstanding
+          </ion-list-header>
+  
+      <ion-item *ngFor="let item of taskdata" on-click="Completetask(item)" ng-bind="item"> 
+        <ion-avatar item-start>
+          <ion-icon name='md-clipboard'></ion-icon>
+        </ion-avatar>
+        <h2 >{{item.taskDescription}}</h2>
+        <p>{{item.timeCompleted | date:'mediumDate'}}</p>
+      </ion-item>
+    </ion-list>
+  
+    <div class="spacer" style="width:300px;height:5px;" id="login-spacer1"></div>    
+  
+    
+  <ion-list>
+      <ion-list-header>
+          Completed Tasks
+        </ion-list-header>
+        <ion-item *ngFor="let task of completedtasks" on-click="viewCompletedTask(task)" ng-bind="task"> 
+            <ion-avatar item-start>
+              <ion-icon name='md-checkbox'></ion-icon>
+            </ion-avatar>
+            <h2>{{task.taskDescription}}</h2>
+            <p>{{task.timeCompleted | date:'longDate'}}</p>
+          </ion-item>
+  </ion-list>
+  
+    
+  
+  </ion-list>
+  
+    <ion-list *ngSwitchCase="'schedule'">
+    
+      
+  <ion-card *ngFor="let item of scheduleitem" >
+      <ion-card-content>
+        <ion-item>
+            <ion-icon name='md-calendar' item-left large></ion-icon>
+        </ion-item>
+        <ion-card-title>
+          <h4>{{item.shiftdate | date:'fullDate'}}</h4>
+          Start:<p >{{item.shiftStartTime}} </p>            
+          End:<p>{{item.shiftEndTime }}</p>
+        </ion-card-title>
+  </ion-card-content>
+  
+   </ion-card>
+        
+  
+      </ion-list>
+   
+  
+    </div>
+      
+  
+  
+    </ion-content>
+  
+  
+  
+  
+  
+  
+  

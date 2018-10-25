@@ -1,0 +1,96 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        Baby Activity
+      </ion-title>
+
+      <ion-buttons end>
+          <button ion-button icon-left on-click="goToProfileView()" color="dark">
+            <ion-icon name="person"></ion-icon>
+            {{userDetails.userName}}
+          </button>
+    
+        </ion-buttons>
+    
+        
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding id="page6">
+    <div id="babyActivity-container42">
+      
+    </div>
+    <div id="babyActivity-container43">
+    
+    </div>
+    <div id="babyActivity-container44">
+      <div class="spacer" style="width:748.031px;height:23.9844px;" id="babyActivity-spacer24"></div>
+    </div>
+    
+        <ion-item>
+          <ion-icon name="basketball"></ion-icon>
+          <ion-label on-click="viewchild()">{{childbadge.firstName}} {{childbadge.lastName}} </ion-label>        
+          <button ion-button outline item-end on-click="trackchild()">Select</button>
+          <button ion-button outline item-end on-click="viewchild()">View</button>
+        </ion-item>
+  
+        <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+        
+      
+        <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+            <ion-list-header>
+              Activity 
+            </ion-list-header>
+            <ion-item>
+              <ion-input  placeholder="eg. Outdoor Soccer" [(ngModel)]="ChildActivity.activity"></ion-input>
+            </ion-item>
+        </ion-list>
+        <p></p>
+        <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+            <ion-list-header>
+              Activity Status
+            </ion-list-header>
+            <ion-item>
+              <ion-input  placeholder="eg. Ended early today" [(ngModel)]="ChildActivity.activityStatus"></ion-input>
+            </ion-item>
+        </ion-list>
+        <p></p>
+        <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+            <ion-list-header>
+              Time
+            </ion-list-header>
+            <ion-item>
+            <ion-datetime displayFormat="hh:mm:ss" placeholder="Time" [(ngModel)]="ChildActivity.time"></ion-datetime>
+          </ion-item>
+        </ion-list>
+        <p></p>
+    <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+        <ion-list-header>
+          Date
+        </ion-list-header>
+        <ion-item>
+          <!-- <ion-input type="date" placeholder="Date" [(ngModel)]="ChildActivity.date"></ion-input> -->
+          <ion-datetime displayFormat="MM/DD/YYYY" placeholder="Date" [(ngModel)]="ChildActivity.date"></ion-datetime>
+          </ion-item>
+          </ion-list>
+          <p></p>
+          <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+              <ion-list-header>
+               Comment
+              </ion-list-header>
+              <ion-item>
+                <ion-input  placeholder="Comment" [(ngModel)]="ChildActivity.comment"></ion-input>
+              </ion-item>
+          </ion-list>
+  
+  
+  
+    <div id="babyActivity-container58">
+      <button id="babyActivity-button31" ion-button color="dark" block icon-right on-click="Activity()">
+        Record Activity
+        <ion-icon name="checkmark-circle"></ion-icon>
+      </button>
+    </div>
+  </ion-content>

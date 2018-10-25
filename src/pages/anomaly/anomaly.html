@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-navbar>
+  <button ion-button menuToggle color="dark">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    <ion-title>
+        Anomalies
+      </ion-title>
+      
+      <ion-buttons end>
+      <button ion-button icon-left on-click="goToProfileView()" color="dark">
+        <ion-icon name="person"></ion-icon>
+        <p >{{userDetails.userName}}</p>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+  <ion-content padding>
+
+    <!-- <h3 style="text-align:center">Report An Anomaly</h3> -->
+    
+        <!-- button ion-button small color="light" on-click="trackchild()">Select Child</button>
+        <button ion-button full outline color="danger">{{childbadge.firstName}}</button-->
+    
+          <ion-item>
+            <!-- <ion-icon name="ios-happy-outline" item-start color="secondary"></ion-icon> -->
+            <ion-label>{{childbadge.firstName}} {{childbadge.lastName}}</ion-label>        
+            <button ion-button outline item-end on-click="trackchild()">Select</button>
+            <button ion-button outline item-end on-click="viewchild()">View</button>
+          </ion-item>
+
+  <div class="spacer" style="width:300px;height:30px;"></div>
+  
+<!--
+  <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+    <ion-list-header>
+      Anomaly Type
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Category</ion-label>
+      <ion-select placeholder="Category" [(ngModel)]="Anomaly.anomalyCategory">
+        <ion-option value="nes">NES</ion-option>
+        <ion-option value="n64">Nintendo64</ion-option>
+        <ion-option value="ps">PlayStation</ion-option>
+        <ion-option value="genesis">Sega Genesis</ion-option>
+        <ion-option value="saturn">Sega Saturn</ion-option>
+        <ion-option value="snes">SNES</ion-option>
+      </ion-select>
+    </ion-item>
+</ion-list> -->
+
+<ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+  <ion-list-header>
+    Anomaly
+  </ion-list-header>
+  <ion-item>
+<ion-input placeholder="Anomaly" [(ngModel)]="Anomaly.anomalyCategory"></ion-input>
+    </ion-item>
+    </ion-list>
+
+<p></p>
+<ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+  <ion-list-header>
+    Description
+  </ion-list-header>
+  <ion-item>
+    <ion-input  placeholder="Description" [(ngModel)]="Anomaly.description"></ion-input>
+  </ion-item>
+</ion-list>
+<p></p>
+<ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+  <ion-list-header>
+    Comment
+  </ion-list-header>
+  <ion-item>
+    <ion-input  placeholder="Comment" [(ngModel)]="Anomaly.comments"></ion-input>
+  </ion-item>
+</ion-list>
+<p></p>
+<ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+  <ion-list-header>
+    Date
+  </ion-list-header>
+  <ion-item>
+<ion-datetime displayFormat="MM/DD/YYYY" placeholder="Date" [(ngModel)]="Anomaly.date"></ion-datetime>
+    </ion-item>
+    </ion-list>
+    <p></p>
+    <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+      <ion-list-header>
+        Time
+      </ion-list-header>
+      <ion-item>
+      <ion-datetime displayFormat="hh:mm:ss"  placeholder="Time" [(ngModel)]="Anomaly.time"></ion-datetime>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full color="dark" on-click="recordAnomaly()">
+    Report Anomaly
+      <ion-icon name="checkmark-circle"></ion-icon>
+  </button>
+
+  </ion-content>

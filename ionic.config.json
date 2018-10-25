@@ -1,0 +1,8 @@
+{
+  "name": "OnthantileApplication",
+  "app_id": "0211d54f",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

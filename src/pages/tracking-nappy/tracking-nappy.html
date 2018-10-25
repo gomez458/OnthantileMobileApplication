@@ -1,0 +1,97 @@
+
+<ion-header>
+    
+      <ion-navbar>
+    
+      <button ion-button menuToggle color="dark">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    
+        <ion-title>
+          Nappy Change
+        </ion-title>
+    
+        <ion-buttons end>
+          <button ion-button icon-left on-click="goToProfileView()" color="dark">
+            <ion-icon name="person"></ion-icon>
+            {{userDetails.userName}}
+          </button>
+    
+        </ion-buttons>
+    
+      </ion-navbar>
+    
+      
+    </ion-header>
+    
+    
+    <ion-content padding>
+    
+        <div id="babyActivity-container43">
+        
+      </div>
+        
+        <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+        
+            <!-- button ion-button small color="light" on-click="trackchild()">Select Child</button>
+            <button ion-button full outline color="danger">{{childbadge.firstName}}</button-->
+    
+        <ion-item>
+          
+          <ion-label>{{childbadge.firstName}} {{childbadge.lastName}}</ion-label>        
+          <button ion-button outline item-end on-click="trackchild()">Select</button>
+          <button ion-button outline item-end on-click="viewchild()">View</button>
+        </ion-item>
+    
+        <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+    
+    <h4>Nappy Condition</h4>
+    <ion-item style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+        <ion-label>Wet</ion-label>
+        <ion-checkbox [(ngModel)]="check.wet"></ion-checkbox>
+      </ion-item>
+    
+      <ion-item style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+        <ion-label>Dirty</ion-label>
+        <ion-checkbox [(ngModel)]="check.dirty"></ion-checkbox>
+      </ion-item>
+          
+          <p></p>
+    
+          <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+              <ion-list-header>
+                Date
+              </ion-list-header>
+              <ion-item>
+                          <!-- <ion-input type="date" placeholder="Date" [(ngModel)]="ChildNappy.date"></ion-input> -->
+            <ion-datetime displayFormat="MM/DD/YYYY" placeholder="Date" [(ngModel)]="ChildNappy.date"></ion-datetime>
+            
+                </ion-item>
+                </ion-list>
+    
+                <p></p>
+    
+                <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+                    <ion-list-header>
+                      Time
+                    </ion-list-header>
+                    <ion-item>
+                    <ion-datetime displayFormat="hh:mm:ss" placeholder="Time" [(ngModel)]="ChildNappy.nappyChangeTime"></ion-datetime>
+                  </ion-item>
+                </ion-list>
+    
+      <!-- <button ion-button full color="light" on-click="Nappy()">Record Nappy Change</button> -->
+    
+    
+       <div id="babyActivity-container58">
+        <button id="babyActivity-button31" ion-button color="dark" on-click="Nappy()" block icon-right>
+          Record Nappy Change
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </button>
+      </div>
+    
+    
+    
+    
+    </ion-content>
+    

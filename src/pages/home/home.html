@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar disablebackbutton color="positive">
+  
+      <button ion-button menuToggle color="dark">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        Home
+      </ion-title>
+  
+    
+      <ion-buttons end>
+        <button ion-button icon-left on-click="goToProfileView()" color="balanced">
+          <ion-icon name="person"></ion-icon>
+          <p style="color:dodgerblue">{{userDetails.userName}}</p>
+        </button>
+      </ion-buttons>
+     
+  
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding id="page1">
+      <ion-refresher (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+    <div id="home-container1">
+      <div>
+        <img src="assets/img/onthantilelogo.png" style="display:block;width:50%;height:25%;margin-left:auto;margin-right:auto;" />
+      </div>
+    </div>
+    <div id="home-container4">
+      <div class="spacer" style="width:300px;height:19px;" id="home-spacer1"></div>
+    </div>
+    <div id="home-container5">
+      <button id="home-button3" ion-button outline color="dark" block icon-right style="font-weight:600;" on-click="goTobabylistView()">
+        Baby Profile
+        <ion-icon name="ios-contacts"></ion-icon>
+      </button>
+      <div id="home-container30">
+        <div class="spacer" style="width:299.508px;height:19.9688px;" id="home-spacer14"></div>
+      </div>
+      <button id="home-button4" ion-button outline color="dark" block icon-right style="font-weight:600;" on-click="goToTaskScheduleView()">
+        Scheduler
+        <ion-icon name="ios-time" end></ion-icon>
+      </button>
+    </div>
+    <div id="home-container6">
+      <div class="spacer" style="width:300px;height:18px;" id="home-spacer2"></div>
+    </div>
+    <div id="home-container7">
+      <button id="home-button6" ion-button outline color="dark" block icon-right style="font-weight:600;" on-click="goToTrackingView()">
+        Baby Tracker
+        <ion-icon name="ios-radio" end></ion-icon>
+      </button>
+      <div id="home-container31">
+        <div class="spacer" style="width:299.531px;height:12.9844px;" id="home-spacer15"></div>
+      </div>
+      <button id="home-button5" ion-button outline color="dark" block icon-right style="font-weight:600;" on-click="goToReportsView()">
+        Daily Log
+        <ion-icon name="ios-document" end></ion-icon>
+      </button>
+    </div>
+    <div id="home-container8">
+      <div class="spacer" style="width:300px;height:19px;" id="home-spacer3"></div>
+    </div>
+    <div id="home-container9">
+
+        <ion-card *ngFor="let item of alertdata" >
+            
+              <ion-item>
+                  <ion-icon name="ios-notifications-outline" item-right large style="color:darkcyan"></ion-icon>
+                <ion-avatar item-start>
+                  <img src="assets/img/user.png">
+                </ion-avatar>
+                <h2 style="color:darkcyan">{{item.firstName}} {{item.LastName}}</h2>
+                <p style="color:black">{{item.dateAndTime | date:'medium' }}</p>
+              </ion-item>
+                  
+              <ion-card-content>
+                  <p [innerHTML]="item.body"></p>  
+              </ion-card-content>      
+            </ion-card>
+
+
+    </div>
+  </ion-content>

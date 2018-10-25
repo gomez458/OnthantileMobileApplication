@@ -1,0 +1,98 @@
+
+<ion-header>
+    
+      <ion-navbar>
+    
+      <button ion-button menuToggle color="dark">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    
+        <ion-title> Baby Meals </ion-title>
+        
+        <ion-buttons end>
+          <button ion-button icon-left on-click="goToProfileView()" color="dark">
+            <ion-icon name="person"></ion-icon>
+            {{userDetails.userName}}
+          </button>
+
+        </ion-buttons>
+      </ion-navbar>
+    </ion-header>
+    
+    <ion-content padding id="pg7">
+
+    <div id="babyMeals-container43">
+    
+    </div>
+    <div id="babyMeals-container44">
+      <div class="spacer" style="width:748.031px;height:23.9844px;" id="babyActivity-spacer24"></div>
+    </div>
+
+        
+        
+        <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+        
+        <!-- button ion-button small color="light" on-click="trackchild()">Select Child</button>
+        <button ion-button full outline color="danger">{{childbadge.firstName}}</button-->
+    <div>
+        <ion-item>
+          <ion-icon name="restaurant"></ion-icon>
+          <ion-label>{{childbadge.firstName}} {{childbadge.lastName}}</ion-label>        
+          <button ion-button outline item-end on-click="trackchild()">Select</button>
+          <button ion-button outline item-end on-click="viewchild()">View</button>
+        </ion-item>
+  
+        <div class="spacer" style="width:300px;height:30px;" id="login-spacer1"></div>
+        
+        <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+            <ion-list-header>
+              Meal Type
+            </ion-list-header>
+            <ion-item>
+              <ion-input  placeholder="Solid" [(ngModel)]="ChildMeal.typeOfMeal"></ion-input>
+            </ion-item>
+        </ion-list>
+        <p></p>
+        <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+            <ion-list-header>
+              Date
+            </ion-list-header>
+            <ion-item>
+                      <!-- <ion-input type="date" placeholder="Date" [(ngModel)]="ChildMeal.date"></ion-input> -->
+        <ion-datetime displayFormat="MM/DD/YYYY" placeholder="Date" [(ngModel)]="ChildMeal.date"></ion-datetime>
+        
+              </ion-item>
+              </ion-list>
+              <p></p>
+        <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+            <ion-list-header>
+              Time
+            </ion-list-header>
+            <ion-item>
+            <ion-datetime displayFormat="hh:mm:ss"  placeholder="Time"[(ngModel)]="ChildMeal.time"></ion-datetime>
+          </ion-item>
+        </ion-list>
+        <p></p>
+        <ion-list style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+            <ion-list-header>
+              Comment
+            </ion-list-header>
+            <ion-item>
+              <ion-input  placeholder="Comment" [(ngModel)]="ChildMeal.BabyMealsComment"></ion-input>
+            </ion-item>
+        </ion-list>
+
+        <div id="babyMeals-container58">
+    <button id="babyMeals-button31" ion-button color="dark" on-click="Meal()" block icon-right>
+      Record Meal
+      <ion-icon name="checkmark-circle"></ion-icon>
+    </button>
+    </div>
+
+    <!--<button id="babyActivity-button31" ion-button color="dark" block icon-right>
+        <button ion-button full color="danger" on-click="Meal()">Record Meal</button> -->
+        
+    </div>
+    </ion-content>
+    
+    

@@ -1,0 +1,51 @@
+
+<ion-content padding>
+ <div class="spacer" style="width:300px;height:24.9896px;" id="login-spacer2"></div>
+  <div>
+    <img src="assets/img/onthantilelogo.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+  </div>
+  <div class="spacer" style="width:300px;height:25px;" id="login-spacer4"></div>
+  
+    <ion-list id="login-list2" style="border: 1px solid #d3d3d3 ; border-radius: 0.5px;">
+      <ion-item id="login-input1">
+        <ion-label floating style="text-align:center;">
+          Username
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="userData.userName"></ion-input>
+      </ion-item> 
+      <ion-item id="login-input2">
+        <ion-label floating style="text-align:center;">
+          Password
+        </ion-label>
+        <ion-input type="password" [(ngModel)]="userData.passwordHash"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="width:300px;height:2px;" id="login-spacer1"></div>
+    <button ion-button round full on-click="login()" color="dark">Login</button>
+    <!--    
+    <button id="login-button1" ion-button outline color="dark" block style="font-weight:lighter;" on-click="login()">
+      Login
+    </button> -->
+    <div class="spacer" style="width:300px;height:5px;" id="login-spacer1"></div>    
+    <button id="login-button3" ion-button clear color="dark" block style="font-size:12px;" on-click="forgotpassword()">
+      Forgot Password?
+    </button>
+
+   
+    
+    
+  
+</ion-content>
+
+
+<!-- Incase 
+
+<button id="login-button1" ion-button outline color="energized" block style="font-weight:lighter; " on-click="gotoHome()">
+      Enter
+    </button>
+    
+     <button id="login-button1" ion-button outline color="energized" block style="font-weight:lighter;" on-click="gotoHome()">
+      Enter
+    </button>
+    
+-->
