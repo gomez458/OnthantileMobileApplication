@@ -3,7 +3,7 @@
 <h3>Welcome to the Onthantile Children's Ministries Project for Industry Expertise.</h3>
 
 <strong>Owner : Onthantile Children's Ministries </strong>
-<strong>Developer and Design:</strong> Gomezgani Phiri phirigomez@gmail.com</br>
+<strong>Developer and Design:</strong> Gomezgani Phiri</br>
 <strong>Team:</strong> Code Select ( Denise, Michael , Barry, Eder, Gomezgani) </br>
 <strong>Date of completion:</strong> 8th October 2017</br>
 
